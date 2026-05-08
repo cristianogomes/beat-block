@@ -1,0 +1,43 @@
+:root {
+    --bg: #f0f2f5;
+    --primary: #4a90e2;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh;
+}
+
+.app-container {
+    background: white; padding: 25px; border-radius: 25px; width: 95%; max-width: 450px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0;
+}
+
+.block {
+    aspect-ratio: 1/1; border-radius: 12px; border: 2px solid #ddd;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; cursor: pointer; transition: all 0.2s;
+    background: #fafafa;
+}
+
+.block.active { border-color: var(--primary); transform: scale(1.05); box-shadow: 0 0 15px rgba(74,144,226,0.3); }
+.block.selected-1 { background-color: #ff8a8a; border-color: #d63031; } /* 1 batida */
+.block.selected-2 { background-color: #74b9ff; border-color: #0984e3; } /* 2 batidas */
+.block.selected-4 { background-color: #ffeaa7; border-color: #fdcb6e; } /* 4 batidas */
+
+.controls { display: flex; flex-direction: column; gap: 15px; }
+.config-row { display: flex; justify-content: space-between; gap: 10px; }
+input { padding: 8px; border-radius: 8px; border: 1px solid #ccc; width: 60px; }
+
+.main-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+button { padding: 12px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; }
+button.primary { background: var(--primary); color: white; }
+#mic-btn.active { background: var(--success); color: white; }
+.stats { background: #eee; padding: 10px; border-radius: 10px; display: flex; justify-content: space-around; }
